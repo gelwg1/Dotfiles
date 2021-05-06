@@ -14,8 +14,11 @@ autocmd VimEnter * :silent exec "!kill -s SIGWINCH $PPID"
 command! -nargs=0 Prettier :CocCommand prettier.formatFile
 
 nnoremap <silent> <C-f> :Files<CR>
-
-
+set signcolumn=number
+set hidden
+set nowritebackup
+set updatetime=300
+set shortmess+=c
 set termguicolors
 set autoindent		" auto indentation
 set incsearch		" incremental search
@@ -37,7 +40,6 @@ let g:airline#extensions#tabline#left_sep = ' '
 let g:AutoPairsShortcutFastWrap = '<C-e>'
 let g:AutoPairsShortcutJump = '<C-l>'
 let g:NERDTreeWinSize=25
-let g:deoplete#enable_at_startup = 0
 let g:coc_global_extensions = ['coc-tsserver']
 let g:NERDTreeFileExtensionHighlightFullName = 1
 let g:NERDTreeExactMatchHighlightFullName = 1
