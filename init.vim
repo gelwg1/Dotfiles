@@ -13,6 +13,10 @@ Plug 'yuezk/vim-js'
 Plug 'HerringtonDarkholme/yats.vim'
 Plug 'maxmellon/vim-jsx-pretty'
 Plug 'mattn/emmet-vim'
+Plug 'SirVer/ultisnips'
+Plug 'mlaursen/vim-react-snippets'
+Plug 'tpope/vim-commentary'
+Plug 'octol/vim-cpp-enhanced-highlight'
 call plug#end()
 
 if (has("termguicolors"))
