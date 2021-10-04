@@ -150,3 +150,4 @@ if type rg &> /dev/null; then
 fi
 source "$HOME/.cargo/env"
 source /home/gelwg1/Videos/alacritty/extra/completions/alacritty.bash
+alias vim="~/Videos/nvim.appimage"
