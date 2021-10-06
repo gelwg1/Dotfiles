@@ -29,29 +29,7 @@ call plug#end()
 
 
 colorscheme onedark
-
-
-" basic settings
 syntax on
-"set number
-"set relativenumber
-"set ignorecase      " ignore case
-"set smartcase     " but don't ignore it, when search string contains uppercase letters
-"set nocompatible
-"set incsearch        " do incremental searching
-"set visualbell
-"set expandtab
-"set tabstop=2
-"set ruler
-"set smartindent
-"set shiftwidth=2
-"set hlsearch
-"set virtualedit=all
-"set backspace=indent,eol,start " allow backspacing over everything in insert mode
-"set autoindent
-"set mouse=a  " mouse support
-
-
 
 " set leader key to ,
 let g:mapleader=","
@@ -63,7 +41,7 @@ nnoremap <Leader>pp <cmd>lua require'telescope.builtin'.builtin{}<CR>
 nnoremap <Leader>m <cmd>lua require'telescope.builtin'.oldfiles{}<CR>
 
 " find buffer
-nnoremap ; <cmd>lua require'telescope.builtin'.buffers{}<CR>
+nnoremap <Leader>; <cmd>lua require'telescope.builtin'.buffers{}<CR>
 
 " find in current buffer
 nnoremap <Leader>/ <cmd>lua require'telescope.builtin'.current_buffer_fuzzy_find{}<CR>
@@ -95,8 +73,7 @@ nnoremap <Leader>ci <cmd>call NERDComment('n', 'toggle')<CR>
 
 
 " >> Lsp key bindings
-nnoremap <silent> gd    <cmd>lua vim.lsp.buf.definition()<CR>
-nnoremap <silent> <C-]> <cmd>lua vim.lsp.buf.definition()<CR>
+nnoremap <silent> gd    <cmd>tab split \| lua vim.lsp.buf.definition()<cr>
 nnoremap <silent> gD    <cmd>lua vim.lsp.buf.declaration()<CR>
 nnoremap <silent> gr    <cmd>lua vim.lsp.buf.references()<CR>
 nnoremap <silent> gi    <cmd>lua vim.lsp.buf.implementation()<CR>
@@ -105,7 +82,7 @@ nnoremap <silent> <C-k> <cmd>lua vim.lsp.buf.signature_help()<CR>
 nnoremap <silent> <C-p> <cmd>Lspsaga diagnostic_jump_prev<CR>
 nnoremap <silent> <C-n> <cmd>Lspsaga diagnostic_jump_next<CR>
 nnoremap <silent> gf    <cmd>lua vim.lsp.buf.formatting()<CR>
-nnoremap <silent> gn    <cmd>lua vim.lsp.buf.rename()<CR>
+nnoremap <silent> gn    <cmd>Lspsaga rename<CR>
 nnoremap <silent> ga    <cmd>Lspsaga code_action<CR>
 xnoremap <silent> ga    <cmd>Lspsaga range_code_action<CR>
 nnoremap <silent> gs    <cmd>Lspsaga signature_help<CR>
