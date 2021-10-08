@@ -66,7 +66,6 @@ nnoremap <silent> ga    <cmd>Lspsaga code_action<CR>
 xnoremap <silent> ga    <cmd>Lspsaga range_code_action<CR>
 nnoremap <silent> gs    <cmd>Lspsaga signature_help<CR>
 nnoremap <silent> <leader>ss :Format<CR>
-
 lua <<EOF
 
 require("setting")
