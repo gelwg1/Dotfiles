@@ -89,7 +89,8 @@ local function setup_servers()
 end
 
 setup_servers()
-
+require'lspconfig'.cssls.setup {
+}
 -- Automatically reload after `:LspInstall <server>` so we don't have to restart neovim
 require'lspinstall'.post_install_hook = function ()
   setup_servers() -- reload installed servers

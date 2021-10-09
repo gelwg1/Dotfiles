@@ -13,24 +13,16 @@ vim.api.nvim_set_keymap('n', "<Leader>bb", [[:lua require'telescope.builtin'.fil
 vim.api.nvim_set_keymap('n', "<Leader>rg", [[:lua require'telescope.builtin'.live_grep{}<CR>]], {noremap = true})
 vim.api.nvim_set_keymap('n', "<Leader>cs", [[:lua require'telescope.builtin'.colorscheme{}<CR>]], {noremap = true})
 
-
-vim.api.nvim_set_keymap('n', "<silent>gd", [[:lua require'telescope.builtin'.colorscheme{}<CR>]], {noremap = true})
-vim.api.nvim_set_keymap('n', "<silent>gD", [[:lua require'telescope.builtin'.colorscheme{}<CR>]], {noremap = true})
-vim.api.nvim_set_keymap('n', "<silent>gr", [[:lua require'telescope.builtin'.colorscheme{}<CR>]], {noremap = true})
-vim.api.nvim_set_keymap('n', "<silent>gi", [[:lua require'telescope.builtin'.colorscheme{}<CR>]], {noremap = true})
-vim.api.nvim_set_keymap('n', "<silent>K", [[:lua require'telescope.builtin'.colorscheme{}<CR>]], {noremap = true})
-nnoremap <silent> gd    <cmd>tab split \| lua vim.lsp.buf.definition()<cr>
-nnoremap <silent> gD    <cmd>lua vim.lsp.buf.declaration()<CR>
-nnoremap <silent> gr    <cmd>lua vim.lsp.buf.references()<CR>
-nnoremap <silent> gi    <cmd>lua vim.lsp.buf.implementation()<CR>
-nnoremap <silent> K     <cmd>Lspsaga hover_doc<CR>
-
-
-nnoremap <silent> <C-k> <cmd>lua vim.lsp.buf.signature_help()<CR>
-nnoremap <silent> <C-p> <cmd>Lspsaga diagnostic_jump_prev<CR>
-nnoremap <silent> <C-n> <cmd>Lspsaga diagnostic_jump_next<CR>
-nnoremap <silent> gf    <cmd>lua vim.lsp.buf.formatting()<CR>
-nnoremap <silent> gn    <cmd>Lspsaga rename<CR>
-nnoremap <silent> ga    <cmd>Lspsaga code_action<CR>
-xnoremap <silent> ga    <cmd>Lspsaga range_code_action<CR>
-nnoremap <silent> gs    <cmd>Lspsaga signature_help<CR>
+vim.api.nvim_set_keymap('n', "<silent>gd", [[:tab split \| lua vim.lsp.buf.definition()<CR>]], {noremap = true})
+vim.api.nvim_set_keymap('n', "<silent>gD", [[:lua vim.lsp.buf.declaration()<CR>]], {noremap = true})
+vim.api.nvim_set_keymap('n', "<silent>gr", [[:lua vim.lsp.buf.references()<CR>]], {noremap = true})
+vim.api.nvim_set_keymap('n', "<silent>gi", [[:lua vim.lsp.buf.implementation()<CR>]], {noremap = true})
+vim.api.nvim_set_keymap('n', "<silent>K", [[:Lspsaga hover_doc<CR>]], {noremap = true})
+vim.api.nvim_set_keymap('n', "<silent><C-k>", [[:lua vim.lsp.buf.signature_help()<CR>]], {noremap = true})
+vim.api.nvim_set_keymap('n', "<silent><C-p>", [[:Lspsaga diagnostic_jump_prev<CR>]], {noremap = true})
+vim.api.nvim_set_keymap('n', "<silent><C-n>", [[:Lspsaga diagnostic_jump_next<CR>]], {noremap = true})
+vim.api.nvim_set_keymap('n', "<silent>gf", [[:lua vim.lsp.buf.formatting()<CR>]], {noremap = true})
+vim.api.nvim_set_keymap('n', "<silent>gn", [[:Lspsaga rename<CR>]], {noremap = true})
+vim.api.nvim_set_keymap('n', "<silent>ga", [[:Lspsaga code_action<CR>]], {noremap = true})
+vim.api.nvim_set_keymap('n', "<silent>ga", [[:Lspsaga range_code_action<CR>]], {noremap = true})
+vim.api.nvim_set_keymap('n', "<silent>gs", [[:Lspsaga signature_help<CR>]], {noremap = true})

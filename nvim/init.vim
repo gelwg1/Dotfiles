@@ -1,4 +1,4 @@
-" >> load plugins
+
 call plug#begin(stdpath('data') . 'vimplug')
     "Telescope for file manager
     Plug 'nvim-lua/plenary.nvim'
@@ -12,7 +12,6 @@ call plug#begin(stdpath('data') . 'vimplug')
     Plug 'hrsh7th/nvim-compe'
 
     "colorscheme
-    Plug 'folke/tokyonight.nvim', { 'branch': 'main' }
     Plug 'christianchiarulli/nvcode-color-schemes.vim'
 
     "Syntax hightlighting Treesitter 
