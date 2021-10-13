@@ -11,6 +11,7 @@ esac
 # don't put duplicate lines or lines starting with space in the history.
 # See bash(1) for more options
 HISTCONTROL=ignoreboth
+
 # append to the history file, don't overwrite it
 shopt -s histappend
 
@@ -56,8 +57,8 @@ if [ -n "$force_color_prompt" ]; then
 fi
 
 if [ "$color_prompt" = yes ]; then
-    PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
     #PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
+    PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
 else
     PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
 fi
@@ -71,7 +72,6 @@ xterm*|alacritty*)
 *)
     ;;
 esac
-
 
 # enable color support of ls and also add handy aliases
 if [ -x /usr/bin/dircolors ]; then
@@ -116,6 +116,7 @@ if ! shopt -oq posix; then
     . /etc/bash_completion
   fi
 fi
+. "$HOME/.cargo/env"
 
 n ()
 {
@@ -150,4 +151,3 @@ if type rg &> /dev/null; then
 fi
 source "$HOME/.cargo/env"
 source /home/gelwg1/Videos/alacritty/extra/completions/alacritty.bash
-alias vim="~/Videos/nvim.appimage"

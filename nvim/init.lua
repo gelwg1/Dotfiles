@@ -46,7 +46,7 @@ vim.opt.updatecount = 0 -- don't write swap files after some number of updates
 vim.opt.splitright = true -- Always open split window on the right
 vim.o.termguicolors = true
 vim.g.nvcode_termcolors=256
-vim.cmd[[colorscheme onedark]]
+vim.cmd[[colorscheme metanoia]]
 vim.o.hidden  = true  --- Required to keep multiple buffers open multiple buffers
 -- Tab control
 vim.opt.smarttab = true -- tab respects 'tabstop', 'shiftwidth', and 'softtabstop'
@@ -83,15 +83,13 @@ require'nvim-treesitter.configs'.setup {
     enable = true,
   },
 }
-
+local opts = { noremap=true, silent=true }
 --LSP configs
 local nvim_lsp = require('lspconfig')
 local on_attach = function(client, bufnr)
   local function buf_set_keymap(...) vim.api.nvim_buf_set_keymap(bufnr, ...) end
   local function buf_set_option(...) vim.api.nvim_buf_set_option(bufnr, ...) end
   -- Mappings.
-  local opts = { noremap=true, silent=true }
-
   -- See `:help vim.lsp.*` for documentation on any of the below functions
   buf_set_keymap('n', 'gD', '<cmd>lua vim.lsp.buf.declaration()<CR>', opts)
   buf_set_keymap('n', 'gd', '<cmd>lua vim.lsp.buf.definition()<CR>', opts)
@@ -174,10 +172,10 @@ require('formatter').setup({
 --}
 
 -- Telescope mapping
-remap('n', '<Leader>ff', [[:lua require('telescope.builtin').find_files()<CR>]], { noremap=true, silent=true })
-remap('n', '<Leader>m', [[:lua require('telescope.builtin').oldfiles()<CR>]], { noremap=true, silent=true })
-remap('n', '<Leader>;', [[:lua require('telescope.builtin').buffers()<CR>]], { noremap=true, silent=true })
-remap('n', '<Leader>cs', [[:lua require('telescope.builtin').colorscheme()<CR>]], { noremap=true, silent=true })
-remap('n', '<Leader>fb', [[:lua require('telescope.builtin').file_browser()<CR>]], {noremap=true, silent=true })
-remap('n', '<Leader>.',  [[:lua require('telescope.builtin').pickers()<CR>]], { noremap=true, silent=true })
+remap('n', '<Leader>ff', [[:lua require('telescope.builtin').find_files()<CR>]], opts)
+remap('n', '<Leader>m', [[:lua require('telescope.builtin').oldfiles()<CR>]], opts)
+remap('n', '<Leader>;', [[:lua require('telescope.builtin').buffers()<CR>]], opts)
+remap('n', '<Leader>cs', [[:lua require('telescope.builtin').colorscheme()<CR>]], opts)
+remap('n', '<Leader>fb', [[:lua require('telescope.builtin').file_browser()<CR>]], opts)
+remap('n', '<Leader>.',  [[:lua require('telescope.builtin').pickers()<CR>]], opts)
 
